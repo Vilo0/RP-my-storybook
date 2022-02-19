@@ -7,6 +7,7 @@ export default {
     argTypes: {
         size: { control: 'select' }, // por defecto agrega todas las opciones, pero puedes usar el options en el caso de querer seleccionar solo algunas opciones
         color: { control: 'select' },
+        // fontColor: { control: 'color' } // por defecto siempre trata de hacer lo mejor posible para identificar que opcion se le esta entregando, en este caso color
     }
 } as ComponentMeta<typeof MyLabel>;
 
@@ -30,12 +31,20 @@ export const Secondary = Template.bind({});
 Secondary.args = {
     size: 'normal',
     color: 'secondary', // primary | secondary | tertiary
-    allCaps: false,
 }
 
 export const Tertiary = Template.bind({});
 Tertiary.args = {
     size: 'normal',
     color: 'tertiary',
-    allCaps: false,
 }
+
+export const CustomFontColor = Template.bind({});
+CustomFontColor.args = {
+    size: 'h1',
+    fontColor: '#5517ac',
+}
+
+// CustomFontColor
+// fontColor: #5517ac
+// size: h1

@@ -13,12 +13,17 @@ export interface Props {
     /**
     * Este es el color que tendrá el label
     */
-    color: 'primary' | 'secondary' | 'tertiary';
+    color?: 'primary' | 'secondary' | 'tertiary';
 
     /**
     * Este es la opción de capizalizar el texto
     */
-    allCaps: boolean;
+    allCaps?: boolean;
+
+    /**
+    * Color personalizado de la fuente
+    */
+    fontColor?: string;
 }
 
 export const MyLabel = ({ 
@@ -26,9 +31,10 @@ export const MyLabel = ({
     size = 'normal',
     allCaps = false,
     color = 'primary',
+    fontColor,
 }: Props) => {
   return (
-    <span className={ `${ size } text-${color}` }>
+    <span className={ `label ${ size } text-${color}` } style={{ color: fontColor }}>
        { allCaps ? label.toUpperCase() : label }
     </span>
   )
